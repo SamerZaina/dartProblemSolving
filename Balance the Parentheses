@@ -1,0 +1,16 @@
+class Solution {
+  bool isValid(String s) {
+    final stack = <String>[];
+    final pairs = {')': '(', ']': '[', '}': '{'};
+    
+    for (final char in s.split('')) {
+      if (pairs.containsValue(char)) {
+        stack.add(char);
+      } else if (stack.isEmpty || pairs[char] != stack.removeLast()) {
+        return false;
+      }
+    }
+    
+    return stack.isEmpty;
+  }
+}
