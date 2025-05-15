@@ -1,0 +1,22 @@
+void printListInReverse<T>(List<T> list) {
+  final stack = <T>[];
+  
+  // Push all elements onto the stack
+  for (final element in list) {
+    stack.add(element);
+  }
+  
+  // Print elements as we pop them from the stack
+  print('List in reverse order:');
+  while (stack.isNotEmpty) {
+    print(stack.removeLast());
+  }
+}
+
+void main() {
+  final numbers = [1, 2, 3, 4, 5];
+  printListInReverse(numbers);
+  
+  final words = ['apple', 'banana', 'cherry'];
+  printListInReverse(words);
+}
